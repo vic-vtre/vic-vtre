@@ -1,4 +1,66 @@
-### Playwright CLI
+### Hybrid Semantic Search
+
+Search over check-in history that finds by meaning and by keyword, then merges both into one ranked list (768-d embeddings, pgvector cosine, from my production app, private repo). The clip walks through the semantic pass, the keyword pass, and the merge. This is the retrieval half of RAG; feeding it into the AI summaries is next.
+
+Ctrl+F for people who can't remember the exact words.
+
+`pgvector` `Hybrid Search` `Embeddings` `RAG` `PostgreSQL` `TypeScript`
+
+https://github.com/user-attachments/assets/b92a3f2c-89e8-4aeb-9e1f-0b610db15714
+
+<br>
+
+---
+
+<br>
+
+### LLM-as-Judge Eval Suite
+
+An AI judge grades my production app's LLM team summaries (private repo) on name coverage, blocker accuracy, mood, and hallucination, and the script exits with code 1 when a case fails. The clip shows three runs: a quick pass over the first 8 of 50 golden cases, the full 50 (trimmed), and a red-team run with deliberately impossible cases to prove the gate fails when it should.
+
+Full run at recording: 20/50. All 16 hand-written cases pass; the 34 generated ones are still being tuned, mostly mood labels and exact blocker wording. A suite that's green on day one probably isn't testing much. A CI hook is next.
+
+`LLM-as-Judge` `Evals` `Prompt Injection` `TypeScript` `Bun`
+
+https://github.com/user-attachments/assets/0f90ba8f-15d8-430f-aceb-7f4d3c00e835
+
+<br>
+
+---
+
+<br>
+
+### LLM Failure Guardrails
+
+What happens when the LLM endpoint accepts the request and never answers (production app, private repo). A rate-limit gate, a timeout, then a plain-text fallback summary flagged is_ai_generated = false, and the daily run still completes. Demo against a local dead endpoint, with the timeout shortened to 5s (20s in production) and the burst traffic pre-filled.
+
+Killed the LLM on purpose. The app shrugged and kept delivering.
+
+`Guardrails` `Fallbacks` `Rate Limiting` `Timeouts` `Graceful Degradation` `TypeScript`
+
+https://github.com/user-attachments/assets/5af5f565-7b43-4045-a248-94d6503810d5
+
+<br>
+
+---
+
+<br>
+
+### AI-Driven Testing (Playwright MCP)
+
+Playwright MCP lets an AI agent drive a real browser. I ask it to plan and debug tests, then record it writing and running them. It does the repetitive execution; I keep the architecture.
+
+`MCP` `AI` `OpenCode` `Playwright` `Agentic Testing` `E2E`
+
+https://github.com/user-attachments/assets/8546ae10-9e58-4017-8d97-2122872b7ed5
+
+<br>
+
+---
+
+<br>
+
+### Playwright Regression Suite
 
 Migrating prod smoke checks into a proper Playwright suite.
 
@@ -18,11 +80,11 @@ https://github.com/user-attachments/assets/3345ae4e-f2cc-4a65-807f-4ed4ff12145a
 
 ### Playwright (headed)
 
-Cross-browser E2E on Chromium, Firefox, and WebKit, logged in once.
+Cross-browser E2E on Chromium, Firefox, and WebKit, logged in once with a magic link.
 
-Blink and you'll miss it. I blinked. Nothing happened.
+Blink and you'll miss the login. I blinked. Nothing happened. That's the magic link working.
 
-`Playwright` `Cross-Browser` `Headed` `E2E`
+`Playwright` `Cross-Browser` `Headed` `E2E` `Magic Link Auth`
 
 https://github.com/user-attachments/assets/dc56444a-5a2f-43e6-96a7-5853ea852373
 
@@ -41,34 +103,6 @@ Every click, every request, every pixel - replayed from a trace.
 `Playwright` `UI-Mode` `Trace-Viewer` `Debugging`
 
 https://github.com/user-attachments/assets/227ef226-e5a6-463b-b091-4a1878f5cab1
-
-<br>
-
----
-
-<br>
-
-### Playwright MCP
-
-Ask the AI (via Playwright MCP) to plan and debug tests, then record it writing and running them. AI does the repetitive execution, humans handle the system architecture.
-
-`Playwright` `AI` `MCP` `E2E` `Agentic Testing`
-
-https://github.com/user-attachments/assets/8546ae10-9e58-4017-8d97-2122872b7ed5
-
-<br>
-
----
-
-<br>
-
-### Vocab Hoarder
-
-Full-stack flashcard platform featuring automated vocabulary processing, CSV data transformations, and custom dictionary API integration.
-
-`TypeScript` `PostgreSQL` `SvelteKit` `PWA`
-
-https://github.com/user-attachments/assets/9b5f3d4d-6dbc-4ec2-b66b-3e7ead123d60
 
 <br>
 
