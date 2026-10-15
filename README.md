@@ -1,6 +1,6 @@
 ### Hybrid Semantic Search
 
-Search over check-in history that finds by meaning and by keyword, then merges both into one ranked list (768-d embeddings, pgvector cosine, from my production app, private repo). The clip walks through the semantic pass, the keyword pass, and the merge. This is the retrieval half of RAG; feeding it into the AI summaries is next.
+Search over check-in history that finds by meaning and by keyword, then merges both into one ranked list (768-d embeddings, pgvector cosine, from my production app, private repo). The clip walks through the semantic pass, the keyword pass, and the merge. This is the retrieval half of RAG, and it now feeds the production AI summaries.
 
 Ctrl+F for people who can't remember the exact words.
 
@@ -18,7 +18,7 @@ https://github.com/user-attachments/assets/b92a3f2c-89e8-4aeb-9e1f-0b610db15714
 
 An AI judge grades my production app's LLM team summaries (private repo) on name coverage, blocker accuracy, mood, and hallucination, and the script exits with code 1 when a case fails. The clip shows three runs: a quick pass over the first 8 of 50 golden cases, the full 50 (trimmed), and a red-team run with deliberately impossible cases to prove the gate fails when it should.
 
-Full run at recording: 20/50. All 16 hand-written cases pass; the 34 generated ones are still being tuned, mostly mood labels and exact blocker wording. A suite that's green on day one probably isn't testing much. A CI hook is next.
+Full run at recording: 20/50. All 16 hand-written cases pass; the 34 generated ones are still being tuned, mostly mood labels and exact blocker wording. A suite that's green on day one probably isn't testing much. Today all 50 cases run in CI on every prompt change.
 
 `LLM-as-Judge` `Evals` `Prompt Injection` `TypeScript` `Bun`
 
