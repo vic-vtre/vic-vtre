@@ -1,12 +1,8 @@
-### Hybrid Semantic Search
+## Vic V - AI Engineer, LLM Evaluation & Test Automation
 
-Search over check-in history that finds by meaning and by keyword, then merges both into one ranked list (768-d embeddings, pgvector cosine, from my production app, private repo). The clip walks through the semantic pass, the keyword pass, and the merge. This is the retrieval half of RAG, and it now feeds the production AI summaries.
+Evals, guardrails and RAG for production LLM apps, built on 8 years of test automation. Short demo videos below; the code is private production code.
 
-Ctrl+F for people who can't remember the exact words.
-
-`pgvector` `Hybrid Search` `Embeddings` `RAG` `PostgreSQL` `TypeScript`
-
-https://github.com/user-attachments/assets/b92a3f2c-89e8-4aeb-9e1f-0b610db15714
+[LinkedIn](https://www.linkedin.com/in/vic-vtre)
 
 <br>
 
@@ -14,11 +10,13 @@ https://github.com/user-attachments/assets/b92a3f2c-89e8-4aeb-9e1f-0b610db15714
 
 <br>
 
+## AI engineering
+
 ### LLM-as-Judge Eval Suite
 
 An AI judge grades my production app's LLM team summaries (private repo) on name coverage, blocker accuracy, mood, and hallucination, and the script exits with code 1 when a case fails. The clip shows three runs: a quick pass over the first 8 of 50 golden cases, the full 50 (trimmed), and a red-team run with deliberately impossible cases to prove the gate fails when it should.
 
-Full run at recording: 20/50. All 16 hand-written cases pass; the 34 generated ones are still being tuned, mostly mood labels and exact blocker wording. A suite that's green on day one probably isn't testing much. Today all 50 cases run in CI on every prompt change.
+At recording, all 16 hand-written cases passed; the 34 generated ones were still being tuned (mood labels, exact blocker wording). A suite that's green on day one probably isn't testing much. Today all 50 cases run in CI on every prompt change.
 
 `LLM-as-Judge` `Evals` `Prompt Injection` `TypeScript` `Bun`
 
@@ -45,6 +43,24 @@ https://github.com/user-attachments/assets/5af5f565-7b43-4045-a248-94d6503810d5
 ---
 
 <br>
+
+### Hybrid Semantic Search
+
+Search over check-in history that finds by meaning and by keyword, then merges both into one ranked list (768-d embeddings, pgvector cosine, from my production app, private repo). The clip walks through the semantic pass, the keyword pass, and the merge. This is the retrieval half of RAG, and it now feeds the production AI summaries.
+
+Ctrl+F for people who can't remember the exact words.
+
+`pgvector` `Hybrid Search` `Embeddings` `RAG` `PostgreSQL` `TypeScript`
+
+https://github.com/user-attachments/assets/b92a3f2c-89e8-4aeb-9e1f-0b610db15714
+
+<br>
+
+---
+
+<br>
+
+## Test automation
 
 ### AI-Driven Testing (Playwright MCP)
 
@@ -98,7 +114,7 @@ https://github.com/user-attachments/assets/dc56444a-5a2f-43e6-96a7-5853ea852373
 
 Every click, every request, every pixel - replayed from a trace.
 
-10 years ago with Selenium I'd have assembled this from scratch. Today, Playwright trace viewer handles root-cause analysis out of the box.
+A few years ago with Selenium I'd have assembled this from scratch. Today, Playwright trace viewer handles root-cause analysis out of the box.
 
 `Playwright` `UI-Mode` `Trace-Viewer` `Debugging`
 
@@ -110,6 +126,8 @@ https://github.com/user-attachments/assets/227ef226-e5a6-463b-b091-4a1878f5cab1
 
 <br>
 
+## Earlier Python projects (2021)
+
 ### Secure SMTP Automation Module (2021)
 
 A plug-and-play secure networking library. Abstracts complex MIME payload encoding and TLS connections into a portable, easily integrated module.
@@ -118,7 +136,7 @@ Useful when you want email automation without becoming an email server engineer.
 
 `Python` `Network Protocols` `TLS Security` `Data Serialization` `API Abstraction`
 
-https://github.com/vicelad/easy-smtp
+https://github.com/vic-vtre/easy-smtp
 
 https://github.com/user-attachments/assets/6e827ae8-6531-4273-9f7d-045cd1b768f3
 
@@ -136,7 +154,7 @@ The goal was simple - press play and hear music. Surprisingly non-trivial.
 
 `Python` `Concurrency` `Async Event Handling` `UI-Backend Sync`
 
-https://github.com/vicelad/winamp-from-temu
+https://github.com/vic-vtre/winamp-from-temu
 
 https://github.com/user-attachments/assets/1ee97382-91b0-43ec-99e0-e660815fb1fb
 
@@ -154,7 +172,7 @@ Sprites and music belong to Capcom and David Production - I own exactly none of 
 
 `Python` `State Management` `Render Loops` `Object-Oriented Design`
 
-https://github.com/vicelad/dio-runner
+https://github.com/vic-vtre/dio-runner
 
 https://github.com/user-attachments/assets/577ad9b3-5006-4745-8809-3f98e4209552
 
