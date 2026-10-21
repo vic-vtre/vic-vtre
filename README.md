@@ -1,6 +1,6 @@
 ## Vic V - AI Engineer, LLM Evaluation & Test Automation
 
-Evals, guardrails and RAG for production LLM apps, built on 13 years of test automation. Short demo videos below; the code is private production code.
+Evals, guardrails and RAG for production LLM apps, built on 13 years of software and test automation. Short demo videos below; the code is private production code.
 
 [LinkedIn](https://www.linkedin.com/in/vic-vtre)
 
